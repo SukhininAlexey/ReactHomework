@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Header from './Header.jsx';
 
-
-// Список меню хедера
 const menuItems = [
     {
         link: '#', title: 'Известия'
@@ -16,8 +16,6 @@ const menuItems = [
         link: '#', title: 'Телеграммы'
     }
 ];
-
-
 
 class App extends Component {
     render () {
@@ -31,4 +29,3 @@ class App extends Component {
 }
 
 ReactDom.render(<App />, document.getElementById('app'));
-
