@@ -1,0 +1,15 @@
+.loginButton {
+    border: none;
+    text-decoration: none;
+    font-family: 'Lora', serif;
+    transition: .2s linear;
+    padding: 1em;
+    background: rgba(177, 152, 145, .3);
+    border-right: 1px solid #b19891;
+    color: #695753;
+}
+
+.loginButton:hover {
+    cursor: pointer;
+    background: #b19891;
+}
