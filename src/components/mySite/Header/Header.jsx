@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Menu from './Menu.jsx';
-import LoginButton from './LoginButton.jsx';
+import Menu from 'components/mySite/Menu';
+import LoginButton from 'components/mySite/LoginButton';
 
 import './Header.css';
 

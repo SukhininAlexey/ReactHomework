@@ -1,29 +1,29 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import ReactDom from 'react-dom';
+import PageSwitcher from 'components/HW4Site/PageSwitcher';
+import MastFooter from 'components/HW4Site/MastFooter';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './global.css';
 
-import Header from './Header.jsx';
+import {config} from 'components/HW4Site/config'; // Моя конфигурация
+import MastHeader from 'components/HW4Site/MastHeader'; // Мастер хедер
+import BlogHeader from 'components/HW4Site/BlogHeader'; // Хедер для основного контента
+import BlogRow from 'components/HW4Site/BlogRow'; // Обертка для контента
 
-const menuItems = [
-    {
-        link: '#', title: 'Известия'
-    },
-    {
-        link: '#', title: 'Товарищи'
-    },
-    {
-        link: '#', title: 'Телеграммы'
-    }
-];
 
 class App extends Component {
     render () {
+        console.log('test');
         return (
-            <div className='container'>
-                <Header menuItems={menuItems} />
-                <div className='content'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, porro.</div>
-            </div>
+            <Fragment>
+                <MastHeader menuItems={config.mastHeaderItems} />
+                <div className='container'>
+                    <BlogHeader content={config.blogHeaderItems} />
+                    <BlogRow />
+                </div>
+                <MastFooter />
+            </Fragment>
         );
     }
 }
