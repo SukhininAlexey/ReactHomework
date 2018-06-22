@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import MenuItem from 'components/HW4Site/MenuItem'
-
 import './Menu.css';
+
+import React, { Component } from 'react';
+
+import MenuItem from 'components/HW4Site/MenuItem';
 
 export default class Menu extends Component{
     constructor(props){
@@ -21,15 +22,15 @@ export default class Menu extends Component{
         });
     }
     
-	render() {
-		const { items } = this.props;
+    render() {
+        const { items } = this.props;
 
-		return (
-            <div className='container'>
-			    <nav className='blog-nav'>
-				    {items.map(item => <MenuItem item={item} onActiveChange={this.handleActiveChange} />)}
-				</nav>
+        return (
+            <div className="container">
+                <nav className="blog-nav">
+                    {items.map(item => <MenuItem item={item} onActiveChange={this.handleActiveChange} />)}
+                </nav>
             </div> 
-		);
-	}
+        );
+    }
 }

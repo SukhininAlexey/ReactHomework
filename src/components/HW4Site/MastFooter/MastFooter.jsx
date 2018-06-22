@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
 import './MastFooter.css';
+
+import React, { Component } from 'react';
 
 export default class MastFooter extends Component{
 	render() {
