@@ -7,20 +7,14 @@ import BlogPost from 'components/HW4Site/BlogPost';
 export default class PostsList extends PureComponent{
 	render() {
         const { posts, users } = this.props;
-        
-		return (
+
+        return (
             <Fragment>
                 {posts.map(postItem => {
-                    let username = 'Anonimus';
-                    users.forEach( (user) => {
-                        if(user.id == postItem.userId){
-                            username = user.username;
-                        }
-                        return false;
-                    });
+                    const user = users.find( (user) => user.id == postItem.userId);
+                    const username = user ? user.username : 'Anonimus';
                     return <BlogPost key={postItem.id} post={postItem} username={username} />
                 })}
-                
             </Fragment> 
 		);
 	}
