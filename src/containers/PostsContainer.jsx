@@ -1,48 +1,22 @@
 import React, { PureComponent, Fragment } from 'react';
+import { connect } from 'react-redux';
 
+import { loadPosts } from 'actions/posts';
+import { loadUsers } from 'actions/users';
 import PostsList from 'components/HW4Site/PostsList';
 
-export default class PostsContainer extends PureComponent {
-    constructor(props){
-        super(props);
-        
-        this.state = {
-            loading: true,
-            users: [],
-            posts: []
-        }
-    }
-    
+class PostsContainer extends PureComponent {
     
     componentDidMount() {
-        this.setState({loading: true});
-        fetch('https://jsonplaceholder.typicode.com/users')
-        .then((response) => response.json())
-        .then((users) => {
-            this.setState({
-                users
-            });
-            fetch('https://jsonplaceholder.typicode.com/posts')
-            .then((response) => response.json())
-            .then((posts) => {
-                this.setState({
-                    loading: false,
-                    posts
-                });
-
-            })
-            .catch(() => {
-                this.setState({ loading: false });
-            });
-            
-        })
-        .catch(() => {
-            this.setState({ loading: false });
-        });
+        const { loadUsers, loadPosts } = this.props;
+        
+        // Подгружаю всех пользователей и все посты
+        loadUsers();
+        loadPosts();
     }
     
     render() {
-        const { users, posts, loading } = this.state;
+        const { users, posts, loading } = this.props;
         
         return (
             <Fragment>
@@ -52,3 +26,24 @@ export default class PostsContainer extends PureComponent {
         );
     }
 }
+
+
+function mapStateToProps(state, props){
+    return {
+        ...props,
+        loading: state.posts.loading || state.users.loading, // если что-то одно не подгрузилось
+        users: state.users.users,
+        posts: state.posts.posts,
+    }
+}
+
+function mapDispatchToProps(dispatch, props){
+    return{
+        ...props,
+        loadUsers: () => loadUsers(dispatch),
+        loadPosts: () => loadPosts(dispatch),
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostsContainer);

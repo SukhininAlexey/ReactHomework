@@ -1,19 +1,10 @@
 export const config = {
     mastHeaderItems: [
         {
-            link: '#', title: 'Home'
+            link: '/users', title: 'Users'
         },
         {
-            link: '#', title: 'New featurs'
-        },
-        {
-            link: '#', title: 'Press'
-        },
-        {
-            link: '#', title: 'New hires'
-        },
-        {
-            link: '#', title: 'About'
+            link: '/posts', title: 'Posts'
         },
     ],
     blogHeaderItems: {

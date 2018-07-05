@@ -1,4 +1,5 @@
 import './MenuItem.css';
+import { Link } from 'react-router-dom';
 
 import React, { Component } from 'react';
 import classNames from 'classnames';
@@ -34,7 +35,7 @@ export default class MenuItem extends Component{
             onActiveChange(this);
         }
         
-        e.preventDefault();
+        //e.preventDefault(); // убрал, т.к. необходима работа ссылки при переходе
     }
     
     render() {
@@ -42,7 +43,7 @@ export default class MenuItem extends Component{
         const nameOfClass = classNames('blog-nav-item', { active: this.state.active });
         
 		return (
-            <a className={nameOfClass} onClick={this.handleClick} href={item.link}>{item.title}</a>
+            <Link className={nameOfClass} onClick={this.handleClick} to={item.link}>{item.title}</Link>
 		);
 	}
 }
