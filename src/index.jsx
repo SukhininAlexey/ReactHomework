@@ -23,7 +23,7 @@ class App extends Component {
                     <BrowserRouter>
                         <Fragment>
                             <MastHeader menuItems={config.mastHeaderItems} />
-                            <div className='container'>
+                            <div className="container">
                                 <BlogHeader content={config.blogHeaderItems} />
                                 <BlogRow />
                             </div>

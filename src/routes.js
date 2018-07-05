@@ -1,5 +1,6 @@
 import BlogColMain from 'components/HW4Site/BlogColMain';
-import UsersCol from 'components/HW4Site/UsersCol'
+import UsersCol from 'components/HW4Site/UsersCol';
+import PostComments from 'components/HW4Site/PostComments';
 
 export default [
     {
@@ -11,5 +12,10 @@ export default [
         path: '/users',
         exact: true,
         component: UsersCol,
-    }
+    },
+    {
+        path: '/comments/:id',
+        exact: true,
+        component: PostComments,
+    } 
 ]
