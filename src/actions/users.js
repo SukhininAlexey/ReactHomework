@@ -6,7 +6,7 @@ export const loadFaled = createAction('[Users] Load faled');
 
 export const loadUsers = (dispatch) => {
     dispatch(loadStarted());
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('http://localhost:8888/users')
     .then((response) => response.json())
     .then((users) => {
         dispatch(loadCompleted(users));

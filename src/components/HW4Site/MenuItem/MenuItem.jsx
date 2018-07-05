@@ -34,8 +34,6 @@ export default class MenuItem extends Component{
         if(typeof onActiveChange === 'function'){
             onActiveChange(this);
         }
-        
-        //e.preventDefault(); // убрал, т.к. необходима работа ссылки при переходе
     }
     
     render() {

@@ -8,10 +8,8 @@ export default class UserCard extends Component{
         
 		return (
             <div className="user-card">
-                <h2 className="user-card-title">{user.username}</h2>
-                <p className="user-card-meta"> Website: {` `}
-                    <a href={"https://" + user.website}>{user.website}</a>
-                </p>
+                <h2 className="user-card-title">{user.name}</h2>
+                <p className="user-card-meta"> Observe posts</p>
                 
             </div> 
 		);

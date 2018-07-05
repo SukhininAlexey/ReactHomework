@@ -8,12 +8,12 @@ export default class PostsList extends PureComponent{
 	render() {
         const { posts, users } = this.props;
 
+
         return (
             <Fragment>
                 {posts.map(postItem => {
-                    const user = users.find( (user) => user.id == postItem.userId);
-                    const username = user ? user.username : 'Anonimus';
-                    return <BlogPost key={postItem.id} post={postItem} username={username} />
+                    const user = users.find( (user) => user._id == postItem.author_id);
+                    return <BlogPost key={postItem.id} post={postItem} user={user} />
                 })}
             </Fragment> 
 		);
