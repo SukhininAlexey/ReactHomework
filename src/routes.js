@@ -14,7 +14,7 @@ export default [
         component: UsersCol,
     },
     {
-        path: '/comments',
+        path: '/comments/:id',
         exact: true,
         component: PostComments,
     } 
